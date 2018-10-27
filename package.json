@@ -5,11 +5,24 @@
     "type": "git",
     "url": "https://github.com/cakinney/larp"
   },
-  "description": "A live action regex parser",
-  "main": "larp.js",
+  "keywords": [
+    "regex",
+    "regexp"
+  ],
+  "description": "Lightweight Asynchronous Regex Project",
+  "main": "lib/larp.js",
+  "types": "lib/larp.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "prepare": "npm run build"
   },
   "author": "Caleb Kinney",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.1.2"
+  }
 }
