@@ -2,7 +2,7 @@
 
 Lightweight Asynchronous Regex Project
 
-LARP is a library that uses stored regex patterns and returns the pattern matches in a promise. You can also use URLs or filenames as the argument with an options parameter and LARP will parse the source code of the page or text from the file as arguments for the regex marching.  More powerful regex magic than a level 15 spell caster! 
+LARP is a library that uses stored regex patterns and returns the pattern matches in a promise. You can also use URLs or filenames as the argument with an options parameter and LARP will parse the source code of the page or text from the file as arguments for the regex marching. More powerful regex magic than a level 15 spell caster!
 
 ## Usage
 
@@ -10,37 +10,41 @@ LARP is a library that uses stored regex patterns and returns the pattern matche
 
     npm install larp
 
-#### Modules 
-Import: `import * as larp from "./larp";`   
-Require: `const larp = require("larp");`  
+#### Modules
+
+Import: `import * as larp from "larp";`  
+Require: `const larp = require("larp");`
 
 #### Matching
-* Email Addresses
-	* `email(arg: string, options?: config)`
-	* Example match: *john.doe@example.com*
-* URLS
-	* `url(arg: string, options?: config)`
-	* Example match: *http://www.example.com*
-* IPv4 Addresses
-	* `ipv4(arg: string, options?: config)`
-	* Example match: *127.0.0.1*
-* HTML src Attribute Values
-	* `src(arg: string, options?: config)`
-	* Example match: *~~src="~~ /javascripts/main.js ~~">~~*
-* HTML href Attribute Values
-	* `href(arg: string, options?: config)`
-	* Example match: *~~href="~~ /examples" ~~>~~*
+
+- Email Addresses
+  _ `email(arg: string, options?: config)`
+  _ Example match: _john.doe@example.com_
+- URLS
+  _ `url(arg: string, options?: config)`
+  _ Example match: _http://www.example.com_
+- IPv4 Addresses
+  _ `ipv4(arg: string, options?: config)`
+  _ Example match: _127.0.0.1_
+- HTML src Attribute Values
+  _ `src(arg: string, options?: config)`
+  _ Example match: _~~src="~~ /javascripts/main.js ~~">~~_
+- HTML href Attribute Values
+  _ `href(arg: string, options?: config)`
+  _ Example match: _~~href="~~ /examples" ~~>~~_
 
 #### Config (optional)
-* **url**
-	* `{ url: true }`
-	* Use argument as *URL* location and URL source will be matched. 
-* **file**
-	* `{ file: true }` 
-	* Use argument as *file* location and file text will be matched. 
+
+- **url**
+  _ `{ url: true }`
+  _ Use argument as _URL_ location and URL source will be matched.
+- **file**
+  _ `{ file: true }`
+  _ Use argument as _file_ location and file text will be matched.
 
 ## Examples (basic)
-The string argument specifies the text to be matched.  
+
+The string argument specifies the text to be matched.
 
 ```javascript
 larp.email("Lorem ipsum john.doe@example.com dolor sit amet.");
@@ -60,7 +64,8 @@ larp.href("<h1>Lorem ipsum</h1><a href="/unicorns.html">Unicorns</a><h1>dolor si
 ```
 
 ## Examples (options)
-The string argument specifies the filename when option { file: true } is provided: 
+
+The string argument specifies the filename when option { file: true } is provided:
 
 ```javascript
 larp.ipv4("sample.txt", { file: true })
@@ -73,7 +78,6 @@ The string argument specifies the URL location when option { url : true } is pro
 larp.href("http://www.example.com", { url: true })
 	=> Promise: [ '/stylesheets/style.css', '/examples' ]
 ```
-
 
 ## Attribution
 
